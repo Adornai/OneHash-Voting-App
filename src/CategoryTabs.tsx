@@ -1,6 +1,6 @@
 // src/CategoryTabs.tsx
 
-import React from "react";
+
 
 type CategoryTabsProps = {
   selectedCategory: string;
