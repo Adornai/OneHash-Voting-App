@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #0c0a1a;
+  background-image: radial-gradient(at top left, #2e1a47, #0c0a1a 70%);
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* Glass Card */
+.card {
+  background-color: rgba(30, 27, 49, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.1);
+  transition: all 0.3s ease;
+}
+.card:hover { border-color: rgba(74, 222, 128, 0.4); box-shadow: 0 0 30px rgba(74, 222, 128, 0.2); }
+
+/* Inputs */
+.input-field {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  background-color: rgba(12, 10, 26, 0.8);
+  color: white;
+  width: 100%;
+}
+.input-field:focus { outline: none; border-color: #4ade80; }
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.25rem;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-admin { background-color: #d97706; }
+.btn-approve { background-color: #2563eb; }
+.btn-vote { background-color: #16a34a; }
+
+/* Font Utilities */
+.font-orbitron { font-family: 'Orbitron', sans-serif; }
+
+/* Loader */
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.loader { border-radius: 50%; border-top-color: #4ade80; animation: spin 1s linear infinite; }
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in-glow { animation: fadeIn 0.7s ease-out forwards; opacity: 0; }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Layout */
+.app-container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+.app-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(74, 222, 128, 0.2); margin-bottom: 2rem; }
+.app-header-title { color: #4ade80; font-size: 2.25rem; font-family: 'Orbitron', sans-serif; margin: 0; }
+.intro-text { color: #9ca3af; max-width: 600px; margin-bottom: 2rem; }
+
+/* ================================================================== */
+/* 9. Category Tabs Styling
+/* ================================================================== */
+
+/* The container to hold the buttons */
+.tabs-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto; /* Allows scrolling on mobile */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  
+  /* Hide scrollbar for Chrome/Safari/Opera */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* The individual button style */
+.tab-btn {
+  padding: 10px 24px;
+  border-radius: 9999px; /* Pill shape */
+  border: 1px solid rgba(75, 85, 99, 0.5); /* Subtle gray border */
+  background: rgba(17, 24, 39, 0.6); /* Dark semi-transparent background */
+  color: #9ca3af; /* Muted text */
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap; /* Keep text on one line */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Hover Effect */
+.tab-btn:hover {
+  border-color: #4ade80; /* Celo Green border on hover */
+  color: #ffffff;
+  transform: translateY(-2px);
+  background: rgba(31, 41, 55, 0.8);
+}
+
+/* The Active (Selected) State */
+.tab-btn.active {
+  background: rgba(74, 222, 128, 0.15); /* Green tint */
+  border-color: #4ade80; /* Bright green border */
+  color: #4ade80; /* Bright green text */
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.4); /* NEON GLOW */
+  text-shadow: 0 0 5px rgba(74, 222, 128, 0.5);
+}
